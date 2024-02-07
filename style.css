@@ -27,13 +27,16 @@ body {
 }
 
 header {
-  margin: 1.4rem 1rem 0 2rem;
+  margin: 1.4rem 1rem 0 0;
+  padding: 0 0 1rem 2rem;
   grid-area: header;
   display: grid;
   grid-template:
     "search notifications" 1fr
-    "user   tools" 1fr
-    "user   tools" 1fr / 3fr 2fr;
+    "user   tools" 1fr /3fr 2fr;
+  gap: 1rem;
+  box-shadow: 2px 7px 4px -4px rgba(153, 153, 153, 0.44);
+  width: 100%;
 }
 
 header > .search {
@@ -58,6 +61,53 @@ header > .search {
   width: 1.8rem;
 }
 
+header > .notification {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification > #notification-bell {
+  width: 1.8rem;
+  justify-self: right;
+}
+
+.notification > #notification-user-image {
+  width: 3rem;
+  justify-self: center;
+}
+
+.notification > #notification-user-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+header > .user-info {
+  display: grid;
+  grid-template:
+    "user-image welcome";
+  grid-template-columns: auto 5fr;
+  gap: 1rem;
+}
+
+.user-info > #main-user-image {
+  width: 4rem;
+  justify-self: center;
+}
+
+.welcome-message {
+  grid-area: welcome;
+  display: grid;
+  grid-template-areas: 
+    "welcome"
+    "user-name";
+  grid-template-rows: 1fr 2fr;
+}
+
+.welcome-message > #welcome-message {
+  font-weight: 500;
+}
 
 .sidebar {
   grid-area: nav;

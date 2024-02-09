@@ -254,6 +254,7 @@ header > .tools {
   background-color: white;
   border-radius: 8px;
   padding: 1rem;
+  margin-right: 1rem;
   box-shadow: 0px 8px 4px 0px rgba(112, 112, 112, 0.44);
   border-left: 10px solid gold;
 }
@@ -314,6 +315,8 @@ header > .tools {
   margin: 0 2rem 0 0;
   padding: 1rem 1rem 1rem 1.5rem;
   box-shadow: 0px 8px 4px 0px rgba(112, 112, 112, 0.44);
+  max-height: 400px;
+  overflow-y: scroll;
 }
 
 .announcements-container > .content {
@@ -347,4 +350,47 @@ header > .tools {
     "title" 1fr
     "content" 4fr;
   gap: 1rem;
+}
+
+.trending > .trending-container {
+
+  display: grid;
+  grid-template:
+    "user-1" 1fr
+    "user-2" 1fr
+    "user-3" 1fr
+    "user-4" 1fr / 1fr;
+  background-color: white;
+  border-radius: 8px;
+  margin: 0 2rem 2rem 0;
+  padding: 1rem 1rem 1rem 1.5rem;
+  box-shadow: 0px 8px 4px 0px rgba(112, 112, 112, 0.44);
+  max-height: 400px;
+  overflow-y: scroll;
+  gap: 1.4rem;
+}
+
+.trending-container > .trending-user {
+  display: grid;
+  grid-template:
+    "image user-handle" 1fr
+    "image project-name" 1fr / 1fr 3fr;
+}
+
+.trending-user > img {
+  grid-area: image;
+  align-self: center;
+  justify-self: left;
+  width: 3rem;
+}
+
+.trending-user > .user-handle {
+  grid-area: user-handle;
+  align-self: end;
+  font-weight: 500;
+}
+
+.trending-user > .project-title {
+  grid-area: project-name;
+  color: rgb(61, 61, 61);
 }

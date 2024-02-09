@@ -8,6 +8,7 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto", var(--system-ui);
+  /* border: 3px solid black; */
 }
 
 body {
@@ -205,6 +206,10 @@ header > .tools {
   background-color: rgb(219, 222, 228);
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .main-content > .projects {
   grid-area: projects;
 
@@ -214,6 +219,12 @@ header > .tools {
     "content" 9fr;
   gap: 1rem;
   padding: 0 0 0 4rem;
+  overflow-y: scroll;
+  border-color: hotpink;
+}
+
+.projects::-webkit-scrollbar {
+  display: none;
 }
 
 .projects > .title,
@@ -229,10 +240,9 @@ header > .tools {
   grid-area: content;
 
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 400px));
-  grid-template-rows: repeat(auto-fill, 200px);
+  max-height: 500px;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 350px));
   gap: 1rem;
-  /* overflow: scroll; */
 }
 
 .project-cards-container > .project-card {
@@ -241,11 +251,11 @@ header > .tools {
     "title" 1fr
     "about" 2fr
     "links" 1fr / 1fr;
-  height: clamp(100px 4rem 300px);
   background-color: white;
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0px 8px 4px 0px rgba(112, 112, 112, 0.44);
+  border-left: 10px solid gold;
 }
 
 .project-card > .title {
@@ -255,6 +265,7 @@ header > .tools {
 
 .project-card > .about {
   grid-area: about;
+  color: rgb(61, 61, 61);
 }
 
 .project-card > .links {
@@ -263,6 +274,7 @@ header > .tools {
   display: grid;
   grid-template:
     ". fav watch fork" 1fr / 6fr 1fr 1fr 1fr;
+  gap: 0.5rem;
   align-self: center;
 }
 
@@ -289,6 +301,42 @@ header > .tools {
     "title" 1fr
     "content" 4fr;
   gap: 1rem;
+}
+
+.announcements > .announcements-container {
+  display: grid;
+  grid-template:
+    "announcement-1" 1fr
+    "announcement-2" 1fr
+    "announcement-3" 1fr / 1fr;
+  background-color: white;
+  border-radius: 8px;
+  margin: 0 2rem 0 0;
+  padding: 1rem 1rem 1rem 1.5rem;
+  box-shadow: 0px 8px 4px 0px rgba(112, 112, 112, 0.44);
+}
+
+.announcements-container > .content {
+  display: grid;
+  grid-template:
+    "title" 1fr
+    "text" 3fr / 1fr;
+}
+
+.content > .title {
+  grid-area: title;
+  align-self: end;
+}
+
+.content > .text {
+  grid-area: text;
+  align-self: start;
+  color: rgb(61, 61, 61);
+  padding-bottom: 1rem;
+}
+
+.content > hr {
+  border-top: 1px solid lightgray;
 }
 
 .main-content > .trending {
